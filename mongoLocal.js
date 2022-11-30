@@ -14,6 +14,18 @@ MongoClient.connect(url,function(err,db){
     });
 });
 
+    // inserting document in collection
+MongoClient.connect(url,function(err,db){
+    if (err) throw err;
+    var dbo = db.db("nodedb");
+    console.log("Accessing database...")
+    var myobj = { name: "Sarvesh", address: "Navi Mumbai, Maharashtra, India" };
+    dbo.collection("Student").insertOne(myobj, function(err, res) {
+      if (err) throw err;
+      console.log("1 document inserted");
+    });
+});
+
 //Fetching the records
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
