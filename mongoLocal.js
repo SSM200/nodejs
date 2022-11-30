@@ -13,3 +13,14 @@ MongoClient.connect(url,function(err,db){
         db.close();
     });
 });
+
+//Fetching the records
+MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("nodedb");
+    dbo.collection("Student").findOne({}, function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      db.close();
+    });
+});
