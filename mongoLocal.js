@@ -14,6 +14,7 @@ MongoClient.connect(url,function(err,db){
     });
 });
 
+//Fetching the records
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("nodedb");
