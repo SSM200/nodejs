@@ -1,3 +1,3 @@
-var cd = require('./connectdb.js');
+var cd = require('./connectDB.js');
 
 cd.connectdb();
